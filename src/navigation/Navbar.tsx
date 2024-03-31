@@ -35,13 +35,13 @@ const NavbarGlobal: React.FC<NavbarProps> = () => {
   return (
     <Flowbite theme={{ theme: customTheme }}>
       <Navbar
-        className="px-4 lg:px-16"
+        className="px-4 md:px-16 md:py-6"
         style={{
           position: 'fixed',
           width: '100%',
           zIndex: 40,
           top: 0,
-          backgroundColor: 'rgba(0, 34, 64, 0.9)',
+          backgroundColor: '#1C46B3',
         }}
       >
         <Navbar.Brand href="#">
@@ -59,23 +59,26 @@ const NavbarGlobal: React.FC<NavbarProps> = () => {
             smooth
             spy
             offset={-200}
+            className="text-white"
           >
             Accueil
           </Link>
           <Link
             activeClass="text-white font-bold border-b-2 border-white"
-            to="projects"
+            to="about"
             smooth
             spy
             offset={-100}
+            className="text-white"
           >
-            Nos projets
+            A propos de nous
           </Link>
           <Link
             activeClass="text-white font-bold border-b-2 border-white"
             to="services"
             smooth
             spy
+            className="text-white"
           >
             Nos services
           </Link>
@@ -84,18 +87,29 @@ const NavbarGlobal: React.FC<NavbarProps> = () => {
             to="team"
             smooth
             spy
+            className="text-white"
           >
             Notre equipe
           </Link>
           <Link
+            activeClass="text-white font-bold border-b-2 border-white"
+            to="blog"
+            smooth
+            spy
+            className="text-white"
+          >
+            Blog
+          </Link>
+          {/* <Link
             activeClass="text-secondary-900 font-bold border-b-2 border-secondary-900"
             to="pricing"
             smooth
             spy
             offset={-100}
+            className="text-white"
           >
             Contact
-          </Link>
+          </Link> */}
         </Navbar.Collapse>
       </Navbar>
     </Flowbite>

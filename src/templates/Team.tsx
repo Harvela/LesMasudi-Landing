@@ -7,7 +7,7 @@ import { team } from '@/utils/team';
 
 const Team = () => {
   return (
-    <div id="team" className="relative z-20 px-4 py-10 lg:px-16">
+    <div id="team" className="relative z-20 px-4 py-5 lg:px-16">
       <div className="rounded-md p-8">
         <h1 className="mb-2 text-lg font-bold text-blue lg:text-xl">
           NOTRE EQUIPE

@@ -15,7 +15,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        'relative flex min-h-[60vh] pt-20 flex-col items-center justify-center overflow-hidden bg-blue w-full rounded-md z-0',
+        'relative flex min-h-[60vh] pt-20 flex-col items-center justify-center overflow-hidden bg-blue w-full rounded-tl-2xl rounded-tr-2xl z-0',
         className,
       )}
     >
@@ -31,7 +31,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="bg-gradient-conic absolute inset-auto right-1/2 h-56 w-[30rem] overflow-visible from-primary via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
+          className="bg-gradient-conic from-primary absolute inset-auto right-1/2 h-56 w-[30rem] overflow-visible via-transparent to-transparent text-white [--conic-position:from_70deg_at_center_top]"
         >
           <div className="absolute  bottom-0 left-0 z-20 h-20 w-[100%] bg-blue [mask-image:linear-gradient(to_top,white,transparent)]" />
           <div className="absolute  bottom-0 left-0 z-20 h-[100%]  w-40 bg-blue [mask-image:linear-gradient(to_right,white,transparent)]" />
@@ -47,7 +47,7 @@ export const LampContainer = ({
           style={{
             backgroundImage: `conic-gradient(var(--conic-position), var(--tw-gradient-stops))`,
           }}
-          className="bg-gradient-conic absolute inset-auto left-1/2 h-56 w-[30rem] from-transparent via-transparent to-primary text-white [--conic-position:from_290deg_at_center_top]"
+          className="bg-gradient-conic to-primary absolute inset-auto left-1/2 h-56 w-[30rem] from-transparent via-transparent text-white [--conic-position:from_290deg_at_center_top]"
         >
           <div className="absolute  bottom-0 right-0 z-20 h-[100%]  w-40 bg-blue [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  bottom-0 right-0 z-20 h-20 w-[100%] bg-blue [mask-image:linear-gradient(to_top,white,transparent)]" />

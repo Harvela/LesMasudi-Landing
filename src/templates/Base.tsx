@@ -5,6 +5,7 @@ import { AppConfig } from '../utils/AppConfig';
 import { About } from './About';
 import { Blog } from './Blog';
 import { Footer } from './Footer';
+import { Galery } from './Galery';
 import { Hero } from './Hero';
 import { Options } from './Options';
 import { Services } from './Services';
@@ -19,6 +20,7 @@ const Base = () => {
       <About />
       <Options />
       <Services />
+      <Galery />
       <Team />
       <Blog />
       <Footer />

@@ -1,27 +1,60 @@
+import { FaFacebook, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+
 const Footer = () => (
-  <footer className="flex h-80 flex-row justify-between bg-[#00172B] p-16 text-white dark:bg-gray-800">
-    <div className="">
-      <p>A propos de nous</p>
+  <footer className="flex flex-col items-center justify-center gap-8 bg-[#00172B] p-8 text-white dark:bg-gray-800 md:p-16">
+    <div className="flex flex-row items-center gap-8">
+      <div className="rounded-full bg-white/80 p-3 text-black">
+        <SiGmail className="h-6 w-6" />
+      </div>
+      <div className="rounded-full bg-white/80 p-3 text-black">
+        <FaFacebook className="h-6 w-6" />
+      </div>
+      <div className="rounded-full bg-white/80 p-3 text-black">
+        <FaInstagramSquare className="h-6 w-6" />
+      </div>
+      <div className="rounded-full bg-white/80 p-3 text-black">
+        <FaTwitterSquare className="h-6 w-6" />
+      </div>
     </div>
 
-    <div className="w-[30%]">
-      <h2 className="text-md mb-8 font-semibold">NOUS CONTACTER</h2>
-      <form>
-        <input
-          type="email"
-          placeholder="Email / Telephone"
-          id="small-input"
-          className="border-b-1 w-full border-x-0 border-t-0 border-white bg-[#00172B] pl-0 outline-none sm:text-xs"
-        />
-        <textarea
-          placeholder="Message"
-          id="small-input"
-          className="border-b-1 my-4 w-full border-x-0 border-t-0 border-white bg-[#00172B] pl-0 outline-none sm:text-xs"
-        />
-        <button className="w-full rounded-lg bg-white p-2 text-sm font-semibold text-[#00172B]">
-          SOUMETTRE
-        </button>
-      </form>
+    <div className="mt-8 flex flex-row items-center gap-4 md:gap-8">
+      <a
+        href="#home"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        Accueil
+      </a>
+      <a
+        href="#about"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        A propos de nous
+      </a>
+      <a
+        href="#service"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        Services
+      </a>
+      <a
+        href="#galery"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        Gallerie
+      </a>
+      <a
+        href="#team"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        Equipe
+      </a>
+      <a
+        href="#blog"
+        className="text-[12px] font-medium text-white/80 md:text-lg"
+      >
+        Blog
+      </a>
     </div>
   </footer>
 );

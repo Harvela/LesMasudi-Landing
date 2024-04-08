@@ -7,13 +7,13 @@ import { team } from '@/utils/team';
 
 const Team = () => {
   return (
-    <div id="team" className="relative z-20 px-4 py-5 lg:px-16">
-      <div className="rounded-md p-8">
+    <div id="team" className="relative z-20 px-8 py-5 lg:px-16">
+      <div className="rounded-md">
         <h1 className="mb-2 text-lg font-bold text-blue lg:text-xl">
           NOTRE EQUIPE
         </h1>
         <div className="h-[4px] w-[4%] bg-blue" />
-        <div className="my-20 grid grid-cols-4 gap-8 text-blue">
+        <div className="my-20 grid grid-cols-1 gap-8 text-blue md:grid-cols-4">
           {team.map((t, index) => (
             <div
               key={index}

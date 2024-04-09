@@ -2,13 +2,27 @@ import { Button } from 'flowbite-react';
 import React from 'react';
 
 import { BackgroundBeams } from '@/components/background-beams';
+import { Contact } from '@/components/contact';
+import Dialog from '@/components/dialog';
 import { InfiniteMovingImages } from '@/components/image-slider';
 
 const Hero: React.FC = () => {
+  const [showForm, setShowForm] = React.useState(false);
   return (
     <div id="home" className="flex h-[100vh] flex-col bg-blue md:h-[95vh]">
+      {showForm && (
+        <Dialog
+          onClose={() => {
+            setShowForm(false);
+          }}
+          isForm
+          width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
+        >
+          <Contact />
+        </Dialog>
+      )}
       <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">
-        <div className="z-[200] ml-16 mt-40 h-[60vh] w-full md:mt-0 md:h-auto md:w-[40%]">
+        <div className="z-[800] ml-16 mt-40 h-[60vh] w-full md:mt-0 md:h-auto md:w-[40%]">
           <h1 className="mt-4 text-[32px] font-semibold text-white lg:text-[40px]">
             Complexe Scolaire
             <br /> Lesmasudi
@@ -17,12 +31,14 @@ const Hero: React.FC = () => {
             L&apos;education de vos enfants au centre de notre action.
           </h2>
           <div className="mt-16 flex flex-col gap-8 md:flex-row">
-            <Button
-              color="white"
-              className="font-sembibold h-[45px] w-[30%] bg-white text-blue md:self-end"
+            <button
+              className="font-sembibold h-[45px] w-[30%] rounded-lg bg-white text-blue md:self-end"
+              onClick={() => {
+                setShowForm(true);
+              }}
             >
               S&apos;inscrire
-            </Button>
+            </button>
 
             <Button
               color="white"

@@ -8,13 +8,17 @@ const Galery = () => {
           GALLERIE
         </h1>
         <div className="h-[4px] w-[4%] bg-blue" />
-        <div className="my-16 grid grid-cols-1 gap-8 text-blue md:grid-cols-3">
+        <div className="my-16 grid grid-cols-2 gap-8 text-blue md:grid-cols-3">
           {galery.map((g, index) => (
             <div
               key={index}
               className="flex flex-col items-center justify-center rounded-md border border-blue/20 p-8 shadow-md"
             >
-              <img src={g.icon} alt={`${g.name}`} className="h-30 w-30 mb-8" />
+              <img
+                src={g.icon}
+                alt={`${g.name}`}
+                className="h-30 w-30 mb-8 object-cover"
+              />
             </div>
           ))}
         </div>

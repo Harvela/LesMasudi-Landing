@@ -8,7 +8,6 @@ import { Footer } from './Footer';
 import { Galery } from './Galery';
 import { Hero } from './Hero';
 import { Options } from './Options';
-import { Services } from './Services';
 import { Team } from './Team';
 
 const Base = () => {
@@ -19,7 +18,6 @@ const Base = () => {
       <Hero />
       <About />
       <Options />
-      <Services />
       <Galery />
       <Team />
       <Blog />

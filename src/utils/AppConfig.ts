@@ -1,7 +1,7 @@
 export const AppConfig = {
-  site_name: 'Harvely',
-  title: 'Harvely',
+  site_name: 'Les Masudi',
+  title: 'Les Masudi',
   description:
-    'Santé accessible pour tous avec Docta Mobile. Téléconsultations, consultations à domicile et suivi, médecine familiale abordable. Afrique, Tech, Experts.',
+    'Ecole Secondaire, primaire et maternelle. Les Masudi, une école de qualité pour une éducation de qualité.',
   locale: 'fr',
 };

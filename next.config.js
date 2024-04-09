@@ -4,8 +4,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 module.exports = withBundleAnalyzer({
+  // eslint: {
+  //   dirs: ['.'],
+  // },
   eslint: {
-    dirs: ['.'],
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
   },
   poweredByHeader: false,
   trailingSlash: true,

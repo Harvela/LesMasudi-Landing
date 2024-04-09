@@ -17,14 +17,14 @@ const Blog = () => {
           {team.map((t, index) => (
             <div
               key={index}
-              className="flex flex-row items-center justify-center gap-8 rounded-md border border-blue/20 bg-white p-8 shadow-md"
+              className="flex flex-col items-center justify-center gap-8 rounded-md border border-blue/20 bg-white shadow-md md:flex-row"
             >
               <img
                 src={t.icon}
                 alt={`${t.name}`}
-                className="mb-8 h-full w-[40%]"
+                className="mb-2 h-full max-h-[150px] w-full object-cover md:mb-8 md:w-[40%]"
               />
-              <div>
+              <div className="px-8 pb-8">
                 <div className="flex flex-col items-start gap-2">
                   <h2 className="font-semibold">{t.name}</h2>
                   <span className="rounded-[8px] bg-blue/10 px-4 py-1 text-[8px] text-blue">

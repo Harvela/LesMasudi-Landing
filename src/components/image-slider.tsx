@@ -89,14 +89,20 @@ export const InfiniteMovingImages = ({
       >
         {items.map((item, idx) => (
           <li
-            className=" relative flex w-[60vw] max-w-full shrink-0 flex-row"
-            style={{
-              background:
-                'linear-gradient(180deg, var(--slate-800), var(--slate-900)',
-            }}
+            className=" relative flex w-[90vw] max-w-full shrink-0 flex-row md:w-[60vw]"
+            style={
+              {
+                // background:
+                //   'linear-gradient(180deg, var(--slate-800), var(--slate-900)',
+              }
+            }
             key={idx}
           >
-            <img src={item} alt="pupils" className="h-[95vh]" />{' '}
+            <img
+              src={item}
+              alt="pupils"
+              className="h-[40vh] w-[100vw] object-cover md:h-[95vh] md:w-auto"
+            />{' '}
           </li>
         ))}
       </ul>

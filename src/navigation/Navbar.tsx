@@ -1,9 +1,9 @@
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 import React, { useState } from 'react';
 import { FaRegWindowClose } from 'react-icons/fa';
 import { MdMenu } from 'react-icons/md';
 
 export type NavbarProps = {
-  // Prop types go here
   setOpenModal?: (value: boolean) => void;
 };
 
@@ -24,10 +24,21 @@ const NavbarGlobal: React.FC<NavbarProps> = ({ setOpenModal }) => {
     }
   };
 
-  console.log('isOpen:', isOpen);
+  const { scrollY } = useScroll();
+  const [otherStyle, setOtherStyle] = useState('');
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 100) {
+      setOtherStyle('bg-blue w-full shadow-md');
+    } else {
+      setOtherStyle('');
+    }
+  });
 
   return (
-    <div className="fixed z-[500] flex flex-row gap-5 px-8 pt-8 md:px-16">
+    <div
+      className={`fixed z-[1000] flex flex-row gap-5 px-8 py-6 md:px-16  ${otherStyle}`}
+    >
       <button onClick={handleMenuToggle}>
         <MdMenu className="cursor-pointer text-white/90" size={40} />
       </button>

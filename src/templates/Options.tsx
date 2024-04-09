@@ -4,13 +4,13 @@ import { IoRestaurantOutline } from 'react-icons/io5';
 
 const Options = () => {
   return (
-    <div id="service" className="relative h-[100vh] md:h-[80vh]">
+    <div id="service" className="relative h-auto md:h-[80vh]">
       <img
         src="/assets/images/home/background.png"
         alt="Hero"
         className="hidden size-full object-cover md:block"
       />
-      <div className="absolute left-0 top-0 flex size-full flex-row gap-16 p-8 md:bg-blue/60 md:p-16">
+      <div className="relative left-0 top-0 flex size-full flex-row gap-16 p-8 md:absolute md:bg-blue/60 md:p-16">
         <div>
           <h1 className="z-40 mb-2 mt-5 text-xl font-semibold text-blue md:text-white lg:text-xl">
             AUTRES SERVICES

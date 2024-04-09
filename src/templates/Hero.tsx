@@ -6,14 +6,14 @@ import { InfiniteMovingImages } from '@/components/image-slider';
 
 const Hero: React.FC = () => {
   return (
-    <div id="home" className="flex h-[95vh] flex-col bg-blue">
-      <div className=" flex h-full flex-col items-center justify-between md:flex-row">
-        <div className="ml-16 mt-40 w-full md:mt-0 md:w-[40%]">
+    <div id="home" className="flex h-[100vh] flex-col bg-blue md:h-[95vh]">
+      <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">
+        <div className="z-[200] ml-16 mt-40 h-[60vh] w-full md:mt-0 md:h-auto md:w-[40%]">
           <h1 className="mt-4 text-[32px] font-semibold text-white lg:text-[40px]">
             Complexe Scolaire
             <br /> Lesmasudi
           </h1>
-          <h2 className="my-[30px] text-[18px] text-white/80 md:text-[15px] lg:text-[25px]">
+          <h2 className="my-[30px] mr-8 text-[18px] text-white/80 md:text-[15px] lg:text-[25px]">
             L&apos;education de vos enfants au centre de notre action.
           </h2>
           <div className="mt-16 flex flex-col gap-8 md:flex-row">
@@ -32,19 +32,14 @@ const Hero: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="flex h-full w-full grow flex-row items-center md:w-[60%]">
+        <div className="flex h-[40vh] w-full grow flex-row items-center bg-blue md:h-full md:w-[60%]">
           <img
             src="/assets/images/home/sub-bg.svg"
             alt="Hero"
-            className="absolute z-[100] mt-[-80] w-[71%] rotate-90 md:h-[95vh] md:w-[24%] md:rotate-0"
-          />
-          <img
-            src="/assets/images/home/pupils.jpg"
-            alt="Hero"
-            className="z-[10] mt-[400px] md:hidden"
+            className="absolute z-[100] mt-[-30vh] w-[100vw] rotate-90 md:mt-[0px] md:h-[95vh] md:w-auto md:rotate-0"
           />
           <InfiniteMovingImages
-            className="z-[50] hidden h-full w-full md:block"
+            className="z-[50] h-full w-full"
             items={[
               '/assets/images/home/pupils.jpg',
               '/assets/images/home/pupils.jpg',

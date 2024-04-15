@@ -23,32 +23,36 @@ const About = () => {
         <div className="grid grid-cols-1 gap-16 md:grid-cols-3">
           <AnimatedEnter>
             <div className="flex max-h-[300px] flex-col items-center justify-center rounded-md border border-border bg-white p-4 text-center text-blue shadow-md shadow-blue/20">
-              <h2 className="mb-8 text-[20px] font-semibold">
+              <h2 className="mb-4 text-[20px] font-semibold">
                 Ecole Maternelle
               </h2>
+              <img
+                src="/assets/images/home/maternel.jpg"
+                className="mb-4 h-[120px] w-full rounded-md object-cover"
+                alt="pupils"
+              />
               <p className="mb-8 text-[16px]">
                 Nous offrons les options de 1ere A 3 eme maternelle en suivant
                 Nous offrons les
               </p>
-              <button className="mt-4 rounded-md border border-blue px-8 py-1 font-semibold text-blue">
-                Prendre n rendez vous
-              </button>
             </div>
           </AnimatedEnter>
           <AnimatedEnter>
             <div className="flex max-h-[300px] flex-col items-center justify-center rounded-md border border-border bg-white p-4 text-center text-blue shadow-md shadow-blue/20">
-              <h2 className="mb-8 text-[20px] font-semibold">Ecole Primaire</h2>
+              <h2 className="mb-4 text-[20px] font-semibold">Ecole Primaire</h2>
+              <img
+                src="/assets/images/home/primary.jpg"
+                className="mb-4 h-[120px] w-full rounded-md object-cover"
+                alt="pupils"
+              />
               <p className="mb-8 text-[16px]">
                 Nous offrons les options de 1ere A 3 eme maternelle en suivant
                 Nous offrons les
               </p>
-              <button className="mt-4 rounded-md border border-blue px-8 py-1 font-semibold text-blue">
-                Prendre n rendez vous
-              </button>
             </div>
           </AnimatedEnter>
           <AnimatedEnter>
-            <div className="mt-0 flex flex-col items-center justify-center gap-4 rounded-md border border-blue/20 bg-blue p-2 text-center text-white shadow-md md:mt-[-60px] md:rounded-tl-[40px]">
+            <div className="mt-0 flex flex-col items-center justify-center gap-4 rounded-md border border-blue/20 bg-blue p-2 text-center text-white shadow-md md:mt-[-60px] ">
               <div className="p-2">
                 <h2 className="my-8 text-[20px] font-semibold">
                   Ecole Secondaire
@@ -97,7 +101,7 @@ const About = () => {
               lwewjenwe kwjewkejwne wkejw
             </p>
             <img
-              src="/assets/images/home/pupils.jpg"
+              src="/assets/images/home/bus.jpg"
               alt="about"
               className="h-[200px] w-full object-cover md:block md:h-[350px]"
             />

@@ -1,12 +1,29 @@
+import React from 'react';
 import { FaRegEdit } from 'react-icons/fa';
 import { FiTruck } from 'react-icons/fi';
 import { IoRestaurantOutline } from 'react-icons/io5';
 
+import { Contact } from '@/components/contact';
+import Dialog from '@/components/dialog';
+
 const Options = () => {
+  const [showForm, setShowForm] = React.useState(false);
+  const [message, setMessage] = React.useState('');
   return (
     <div id="service" className="relative h-auto md:h-[80vh]">
+      {showForm && (
+        <Dialog
+          onClose={() => {
+            setShowForm(false);
+          }}
+          isForm
+          width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
+        >
+          <Contact message={message} onClose={() => setShowForm(false)} />
+        </Dialog>
+      )}
       <img
-        src="/assets/images/home/background.png"
+        src="/assets/images/home/pupil2.jpg"
         alt="Hero"
         className="hidden size-full object-cover md:block"
       />
@@ -26,8 +43,16 @@ const Options = () => {
                 eleves
               </p>
 
-              <button className="mt-2 rounded-md border border-white px-8 py-2">
-                Les modalites
+              <button
+                className="mt-2 rounded-md border border-white px-8 py-2"
+                onClick={() => {
+                  setShowForm(true);
+                  setMessage(
+                    `Bonjour, je voudrais avoir plus d'informations sur la cantine scolaire`,
+                  );
+                }}
+              >
+                En savoir plus
               </button>
             </div>
 
@@ -39,9 +64,16 @@ const Options = () => {
                 Nous disposons de 3 bus scolaires por le deplacement de nos
                 eleves
               </p>
-
-              <button className="mt-2 rounded-md border border-white px-8 py-2">
-                Les modalites
+              <button
+                className="mt-2 rounded-md border border-white px-8 py-2"
+                onClick={() => {
+                  setShowForm(true);
+                  setMessage(
+                    `Bonjour, je voudrais avoir plus d'informations sur le transport scolaire`,
+                  );
+                }}
+              >
+                En savoir plus
               </button>
             </div>
 
@@ -55,9 +87,16 @@ const Options = () => {
                 Nous disposons de 3 bus scolaires por le deplacement de nos
                 eleves
               </p>
-
-              <button className="mt-2 rounded-md border border-white px-8 py-2">
-                Les modalites
+              <button
+                className="mt-2 rounded-md border border-white px-8 py-2"
+                onClick={() => {
+                  setShowForm(true);
+                  setMessage(
+                    `Bonjour, je voudrais avoir plus d'informations sur les formations extrascolaires`,
+                  );
+                }}
+              >
+                En savoir plus
               </button>
             </div>
           </div>

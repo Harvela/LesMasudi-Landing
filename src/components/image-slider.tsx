@@ -101,7 +101,7 @@ export const InfiniteMovingImages = ({
             <img
               src={item}
               alt="pupils"
-              className="h-[40vh] w-[100vw] object-cover md:h-[95vh] md:w-auto"
+              className="h-[40vh] w-[100vw] object-cover md:h-[95vh] md:w-full"
             />{' '}
           </li>
         ))}

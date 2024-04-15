@@ -1,4 +1,3 @@
-import { Button } from 'flowbite-react';
 import React from 'react';
 
 import { BackgroundBeams } from '@/components/background-beams';
@@ -8,6 +7,7 @@ import { InfiniteMovingImages } from '@/components/image-slider';
 
 const Hero: React.FC = () => {
   const [showForm, setShowForm] = React.useState(false);
+  const [message, setMessage] = React.useState('');
   return (
     <div id="home" className="flex h-[100vh] flex-col bg-blue md:h-[95vh]">
       {showForm && (
@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           isForm
           width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
         >
-          <Contact />
+          <Contact message={message} onClose={() => setShowForm(false)} />
         </Dialog>
       )}
       <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">
@@ -35,17 +35,18 @@ const Hero: React.FC = () => {
               className="font-sembibold h-[45px] w-[30%] rounded-lg bg-white text-blue md:self-end"
               onClick={() => {
                 setShowForm(true);
+                setMessage(``);
               }}
             >
-              S&apos;inscrire
+              Nous contacter
             </button>
 
-            <Button
+            {/* <Button
               color="white"
               className="hidden h-[45px] w-[30%] border border-white font-semibold text-white md:block md:self-end"
             >
               Nous contacter
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="flex h-[40vh] w-full grow flex-row items-center bg-blue md:h-full md:w-[60%]">
@@ -57,8 +58,9 @@ const Hero: React.FC = () => {
           <InfiniteMovingImages
             className="z-[50] h-full w-full"
             items={[
-              '/assets/images/home/pupils.jpg',
-              '/assets/images/home/pupils.jpg',
+              '/assets/images/home/pupil2.jpg',
+              '/assets/images/home/pupil3.jpg',
+              '/assets/images/home/pupil4.jpg',
             ]}
           ></InfiniteMovingImages>
         </div>

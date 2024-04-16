@@ -2,7 +2,7 @@ export const team = [
   {
     name: 'MASUDI Barwani',
     role: 'Promoteur',
-    icon: '/assets/images/home/team.png',
+    icon: '',
     linkedin: '',
     twitter: '',
     gmail: '',

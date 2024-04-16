@@ -32,8 +32,8 @@ const About = () => {
                 alt="pupils"
               />
               <p className="mb-8 text-[16px]">
-                Nous offrons les options de 1ere A 3 eme maternelle en suivant
-                Nous offrons les
+                Nous proposons des options allant de la première à la troisième
+                maternelle.
               </p>
             </div>
           </AnimatedEnter>
@@ -46,8 +46,8 @@ const About = () => {
                 alt="pupils"
               />
               <p className="mb-8 text-[16px]">
-                Nous offrons les options de 1ere A 3 eme maternelle en suivant
-                Nous offrons les
+                Nous offrons des options allant de la première à la sixième
+                année primaire.
               </p>
             </div>
           </AnimatedEnter>
@@ -58,8 +58,8 @@ const About = () => {
                   Ecole Secondaire
                 </h2>
                 <p className="mb-8 text-[16px]">
-                  Nous offrons les options de 1ere A 3 eme maternelle en suivant
-                  Nous offrons les
+                  Nous proposons également la septième et la huitième année. Et
+                  voici les différentes sections que nous organisons:
                 </p>
               </div>
 

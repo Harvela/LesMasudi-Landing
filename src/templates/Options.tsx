@@ -33,14 +33,15 @@ const Options = () => {
             AUTRES SERVICES
           </h1>
           <div className="h-[4px] w-[4%] bg-blue md:bg-white" />
-          <div className="my-16 grid grid-cols-1 gap-16 md:grid-cols-3">
-            <div className="flex flex-col items-center justify-center gap-8 rounded-md  border-[1px] border-white/60 bg-blue p-8 text-center text-white">
+          <div className="my-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center justify-center gap-6 rounded-md  border-[1px] border-white/60 bg-blue p-8 text-center text-white">
               <IoRestaurantOutline className="h-10 w-10" />
               <h2 className="text-[20px] font-semibold">CANTINE SCOLAIRE</h2>
 
-              <p className="text-[16px]">
-                Nous disposons de 3 bus scolaires por le deplacement de nos
-                eleves
+              <p className="text-[14px]">
+                Notre cantine scolaire se distingue par ses repas préparés avec
+                soin, offrant le goût réconfortant et l&apos;authenticité des
+                plats faits maison.
               </p>
 
               <button
@@ -60,9 +61,11 @@ const Options = () => {
               <FiTruck className="h-10 w-10" />
               <h2 className="text-[20px] font-semibold">TRANSPORT SCOLAIRE</h2>
 
-              <p className="text-[16px]">
-                Nous disposons de 3 bus scolaires por le deplacement de nos
-                eleves
+              <p className="text-[14px]">
+                Notre service de transport scolaire dispose d&apos;une flotte de
+                bus suffisante pour assurer aux élèves des déplacements
+                confortables et sécurisés, facilitant ainsi leur mobilité
+                quotidienne.
               </p>
               <button
                 className="mt-2 rounded-md border border-white px-8 py-2"
@@ -83,9 +86,11 @@ const Options = () => {
                 FORMATIONS EXTRASCOLAIRE
               </h2>
 
-              <p className="text-[16px]">
-                Nous disposons de 3 bus scolaires por le deplacement de nos
-                eleves
+              <p className="text-[14px]">
+                Nous proposons des formations extrascolaires pour doter nos
+                élèves des compétences essentielles à la vie quotidienne,
+                enrichissant ainsi leur parcours éducatif avec des savoir-faire
+                pratiques et pertinents.
               </p>
               <button
                 className="mt-2 rounded-md border border-white px-8 py-2"

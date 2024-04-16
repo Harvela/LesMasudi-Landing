@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaSquareXTwitter } from 'react-icons/fa6';
-import { MdEmail } from 'react-icons/md';
+// import Link from 'next/link';
+// import { FaLinkedin } from 'react-icons/fa';
+// import { FaSquareXTwitter } from 'react-icons/fa6';
+// import { MdEmail } from 'react-icons/md';
 
 import { team } from '@/utils/team';
 
@@ -22,15 +22,15 @@ const Team = () => {
               <img
                 src={t.icon}
                 alt={`${t.name}`}
-                className="h-30 w-30 mb-8 rounded-full"
+                className="mb-4 h-[200px] w-[200px] rounded-full object-cover"
               />
-              <div className="flex flex-col items-center gap-2">
+              <div className="mb-4 flex flex-col items-center gap-2">
                 <h2 className="font-semibold">{t.name}</h2>
                 <span className="rounded-[8px] bg-blue/10 px-4 py-1 text-[8px] text-blue">
                   {t.role}
                 </span>
               </div>
-              <p className="my-8 text-center text-[10px]">{t.description}</p>
+              {/* <p className="my-8 text-center text-[10px]">{t.description}</p>
               <div className="flex flex-row items-center gap-4">
                 <Link href={t.linkedin}>
                   <FaLinkedin />
@@ -41,7 +41,7 @@ const Team = () => {
                 <Link href={t.gmail}>
                   <MdEmail />
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

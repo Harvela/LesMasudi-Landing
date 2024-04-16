@@ -22,23 +22,23 @@ const Blog = () => {
           {blog.map((b, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center gap-8 rounded-md border border-blue/20 bg-white text-black shadow-md md:flex-row"
+              className="flex flex-col rounded-md border border-blue/20 bg-white text-black shadow-md md:flex-row"
             >
               <img
                 src={b.image}
                 alt={`${b.title}`}
-                className="h-full w-full rounded-l-md object-cover md:w-[40%]"
+                className="h-[320px] w-full rounded-l-md object-cover md:w-[600px]"
               />
-              <div className="px-2 py-6">
-                <div className="flex flex-col items-start gap-2">
+              <div className="p-6">
+                <div className="flex flex-col gap-2">
                   <h2 className="mb-2 text-[16px] font-bold">{b.title}</h2>
-                  <div className="flex flex-row items-center gap-1">
+                  <div className="mb-4 flex flex-row items-center gap-1">
                     {Object.values(b.team).map((author, authorIndex) => (
                       <img
                         key={authorIndex}
                         src={author.photo}
                         alt={author.name}
-                        className="h-10 w-10 rounded-full"
+                        className="h-10 w-10 rounded-full object-cover"
                       />
                     ))}
                   </div>

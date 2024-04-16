@@ -1,12 +1,8 @@
 import { FaFacebook, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
 
 const Footer = () => (
   <footer className="flex flex-col items-center justify-center gap-8 bg-[#00172B] p-8 text-white dark:bg-gray-800 md:p-16">
     <div className="flex flex-row items-center gap-8">
-      <div className="rounded-full bg-white/80 p-3 text-black">
-        <SiGmail className="h-6 w-6" />
-      </div>
       <div className="rounded-full bg-white/80 p-3 text-black">
         <FaFacebook className="h-6 w-6" />
       </div>
@@ -15,6 +11,33 @@ const Footer = () => (
       </div>
       <div className="rounded-full bg-white/80 p-3 text-black">
         <FaTwitterSquare className="h-6 w-6" />
+      </div>
+    </div>
+
+    <div className="mt-8 flex flex-row gap-4 md:gap-16">
+      <div className="flex flex-row gap-2 md:gap-4">
+        <h2>Email: </h2>
+        <a
+          href="mailto:lesmasudi@info.com"
+          className="text-[12px] font-medium text-white/80 md:text-lg"
+        >
+          lesmasudi@info.com
+        </a>
+      </div>
+
+      <div className="flex flex-row gap-2 md:gap-4">
+        <h2>Telephone: </h2>
+        <div className="flex flex-row items-center gap-1 md:gap-2">
+          <p className="text-[12px] font-medium text-white/80 md:text-lg">
+            0993456789 -
+          </p>
+          <p className="text-[12px] font-medium text-white/80 md:text-lg">
+            0993456789 -
+          </p>
+          <p className="text-[12px] font-medium text-white/80 md:text-lg">
+            0993456789
+          </p>
+        </div>
       </div>
     </div>
 

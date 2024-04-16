@@ -88,17 +88,19 @@ const About = () => {
           <h1 className="text-[25px] font-bold text-blue">A Propos de nous</h1>
           <div className="flex flex-col-reverse gap-2 pt-10 md:grid md:grid-cols-2 md:gap-10 md:pt-0">
             <p className=" mt-8 leading-10">
-              Notre objectif est de rendre tout le monde heureux nous chaneons
-              la maniere dont l educcation des enfants et nous travaillsons
-              vaiment pour nous aider a etre wejkwjewke , parceque nous sommes
-              touj ours wejnfwnfw lwewjenwe kwjewkejwne wkejwnewjen wjkenkwnf
-              kwejfnwfj jwefnwkjfw kjwenfwf kjwnefwnf kwjefnw wkjenfw kwjefnwf
-              wkejf wk fwfwf wkfjw fwkj fwkfjwkf wkjf wkf wf wfj w fwej ee wke
-              fwkjfw kwjfwfnwkfnw kwjefnwfkwfjnw wkejfnwfw Notre objectif est de
-              rendre tout le monde heureux nous chaneons la maniere dont l
-              educcation des enfants et nous travaillsons vaiment pour nous
-              aider a etre wejkwjewke , parceque nous sommes touj ours wejnfwnfw
-              lwewjenwe kwjewkejwne wkejw
+              Notre école s&apos;engage à créer un environnement où le bonheur
+              de chaque enfant est primordial. En repensant l&apos;éducation,
+              nous offrons bien plus qu&apos;une excellence académique. Nous
+              nous soucions profondément du bien-être émotionnel, social et
+              physique de chaque élève. Avec dévouement, notre équipe travaille
+              pour guider chaque enfant vers son plein potentiel, en les
+              inspirant à explorer leur créativité et à devenir des citoyens
+              responsables et empathiques. Nous croyons en une approche
+              holistique de l&apos;éducation, où chaque aspect de l&apos;être
+              humain est pris en compte. Rejoignez-nous pour une expérience
+              éducative de qualité, où chaque enfant est valorisé et soutenu
+              dans son parcours d&apos;apprentissage. Ensemble, nous pouvons
+              façonner un avenir où le bonheur et le succès vont de pair.
             </p>
             <img
               src="/assets/images/home/bus.jpg"

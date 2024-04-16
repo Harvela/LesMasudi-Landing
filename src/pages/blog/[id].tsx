@@ -31,7 +31,7 @@ const BlogDetailPage = () => {
           <img
             src={post.image}
             alt={post.title}
-            className="h-[600px] w-full max-w-[1000px]"
+            className="h-[600px] w-full max-w-[1000px] object-cover"
           />
           <p className="mt-16 text-[16px]">{post.description1}</p>
           <p className="mt-8 text-[16px]">{post.description2}</p>
@@ -47,7 +47,7 @@ const BlogDetailPage = () => {
                   <img
                     src={author.photo}
                     alt={author.name}
-                    className="h-40 w-40 rounded-full"
+                    className="h-40 w-40 rounded-full object-cover"
                   />
                   <div className="mt-4 flex flex-col items-center justify-center">
                     <p className="mb-1 text-[20px] font-bold">{author.name}</p>

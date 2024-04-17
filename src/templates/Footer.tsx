@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagramSquare, FaTwitterSquare } from 'react-icons/fa';
 
 const Footer = () => (
-  <footer className="flex flex-col items-center justify-center gap-8 bg-[#00172B] p-8 text-white dark:bg-gray-800 md:p-16">
+  <footer className="flex flex-col items-center justify-center gap-4 bg-[#00172B] p-8 text-white dark:bg-gray-800 md:gap-8 md:p-16">
     <div className="flex flex-row items-center gap-8">
       <div className="rounded-full bg-white/80 p-3 text-black">
         <FaFacebook className="h-6 w-6" />
@@ -14,9 +14,11 @@ const Footer = () => (
       </div>
     </div>
 
-    <div className="mt-8 flex flex-row gap-4 md:gap-16">
-      <div className="flex flex-row gap-2 md:gap-4">
-        <h2>Email: </h2>
+    <div className="mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-16">
+      <div className="flex flex-row items-center gap-2 md:gap-4">
+        <h2 className="text-[12px] font-medium text-white/80 md:text-lg">
+          Email:{' '}
+        </h2>
         <a
           href="mailto:lesmasudi@info.com"
           className="text-[12px] font-medium text-white/80 md:text-lg"
@@ -25,8 +27,10 @@ const Footer = () => (
         </a>
       </div>
 
-      <div className="flex flex-row gap-2 md:gap-4">
-        <h2>Telephone: </h2>
+      <div className="flex flex-row items-center gap-2 md:gap-4">
+        <h2 className="text-[12px] font-medium text-white/80 md:text-lg">
+          Telephone:{' '}
+        </h2>
         <div className="flex flex-row items-center gap-1 md:gap-2">
           <p className="text-[12px] font-medium text-white/80 md:text-lg">
             0993456789 -

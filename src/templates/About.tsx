@@ -28,7 +28,7 @@ const About = () => {
               </h2>
               <img
                 src="/assets/images/home/maternel.jpg"
-                className="mb-4 h-[120px] w-full rounded-md object-cover"
+                className="mb-4 h-[150px] w-full rounded-md object-cover"
                 alt="pupils"
               />
               <p className="mb-8 text-[16px]">
@@ -42,7 +42,7 @@ const About = () => {
               <h2 className="mb-4 text-[20px] font-semibold">Ecole Primaire</h2>
               <img
                 src="/assets/images/home/primary.jpg"
-                className="mb-4 h-[120px] w-full rounded-md object-cover"
+                className="mb-4 h-[150px] w-full rounded-md object-cover"
                 alt="pupils"
               />
               <p className="mb-8 text-[16px]">

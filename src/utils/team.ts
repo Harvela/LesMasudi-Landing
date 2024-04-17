@@ -2,7 +2,7 @@ export const team = [
   {
     name: 'MASUDI Barwani',
     role: 'Promoteur',
-    icon: '',
+    icon: 'https://admin.harvely.com/uploads/Whats_App_Image_2024_04_17_at_09_08_34_cf7490fb58.jpeg',
     linkedin: '',
     twitter: '',
     gmail: '',

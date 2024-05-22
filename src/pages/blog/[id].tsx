@@ -22,23 +22,23 @@ const BlogDetailPage = () => {
         <Navbar />
       </div>
       <div className="flex flex-col gap-8">
-        <div className="bg-blue">
-          <h1 className="m-auto mt-24 max-w-[1000px] py-10 text-[32px] font-semibold text-white">
+        <div className="bg-blue px-8">
+          <h1 className="m-auto mt-24 w-full py-10 text-[32px] font-semibold text-white md:max-w-[1000px]">
             {post.title}
           </h1>
         </div>
-        <div className="mx-auto my-16 flex max-w-[1000px] flex-col items-center">
+        <div className="mx-auto my-16 flex w-full flex-col items-center px-8 md:max-w-[1000px]">
           <img
             src={post.image}
             alt={post.title}
-            className="h-[600px] w-full max-w-[1000px] object-cover"
+            className="h-[600px] w-full object-cover md:max-w-[1000px]"
           />
           <p className="mt-16 text-[16px]">{post.description1}</p>
           <p className="mt-8 text-[16px]">{post.description2}</p>
           <p className="my-8 text-[16px]">{post.description3}</p>
           <div className="m-auto flex flex-col items-center justify-center">
             <h1 className="my-12 text-[32px] font-bold">AUTEURS</h1>
-            <div className="flex flex-row items-center justify-between gap-16">
+            <div className="flex flex-row flex-wrap items-center justify-between gap-8 md:gap-16">
               {Object.values(post.team).map((author, authorIndex) => (
                 <div
                   key={authorIndex}
@@ -47,11 +47,15 @@ const BlogDetailPage = () => {
                   <img
                     src={author.photo}
                     alt={author.name}
-                    className="h-40 w-40 rounded-full object-cover"
+                    className="h-20 w-20 rounded-full object-cover md:h-40 md:w-40"
                   />
                   <div className="mt-4 flex flex-col items-center justify-center">
-                    <p className="mb-1 text-[20px] font-bold">{author.name}</p>
-                    <p className="text-[14px] text-black/60">{author.email}</p>
+                    <p className="mb-1 text-[12px] font-bold md:text-[20px]">
+                      {author.name}
+                    </p>
+                    <p className="text-[11px] text-black/60 md:text-[14px]">
+                      {author.email}
+                    </p>
                   </div>
                 </div>
               ))}

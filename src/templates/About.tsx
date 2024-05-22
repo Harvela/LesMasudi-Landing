@@ -123,7 +123,8 @@ const About = () => {
             className="md:text-7xl mt-8 bg-gradient-to-br from-white to-white/60 bg-clip-text py-4 pt-[100px] text-center text-4xl font-medium tracking-tight text-transparent"
           >
             <span className="pt-[100px]">
-              Notre devise <br /> Education, Famille et Travail.
+              Notre devise <br />{' '}
+              <span className="mt-4 font-bold">EDUCATION-PAIX-PROGRES</span>
             </span>
           </motion.h1>
         </LampContainer>

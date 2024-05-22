@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
           <img
             src="/assets/images/home/sub-bg.svg"
             alt="Hero"
-            className="absolute z-[100] mt-[-30vh] w-[100vw] rotate-90 md:mt-[0px] md:h-[95vh] md:w-auto md:rotate-0"
+            className="absolute z-[100] mt-[-30vh] hidden w-[100vw] rotate-90 md:mt-[0px] md:block md:h-[95vh] md:w-auto md:rotate-0"
           />
           <InfiniteMovingImages
             className="z-[50] h-full w-full"

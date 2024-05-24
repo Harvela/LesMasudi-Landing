@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import React from 'react';
 
+import Dialog from '@/components/dialog';
 import { LampContainer } from '@/components/lamp';
+import { Subscribe } from '@/components/subscribe';
 
 const AnimatedEnter: React.FC<{ children: any }> = ({ children }) => {
   return (
@@ -17,68 +20,87 @@ const AnimatedEnter: React.FC<{ children: any }> = ({ children }) => {
 };
 
 const About = () => {
+  const [showSubscribeForm, setShowSubscribeForm] = React.useState(false);
+  const [message, setMessage] = React.useState('');
   return (
-    <div id="about" className="relative z-[200] mt-10 md:mt-[-100px]">
+    <div id="about" className="relative z-[200] mt-10">
+      {showSubscribeForm && (
+        <Dialog
+          onClose={() => {
+            setShowSubscribeForm(false);
+          }}
+          isForm
+          width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
+        >
+          <Subscribe
+            message={message}
+            onClose={() => setShowSubscribeForm(false)}
+          />
+        </Dialog>
+      )}
       <div className="px-8 lg:px-16">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-3">
           <AnimatedEnter>
-            <div className="flex max-h-[300px] flex-col items-center justify-center rounded-md border border-border bg-white p-4 text-center text-blue shadow-md shadow-blue/20">
-              <h2 className="mb-4 text-[20px] font-semibold">
-                Ecole Maternelle
-              </h2>
-              <img
-                src="/assets/images/home/maternel.jpg"
-                className="mb-4 h-[150px] w-full rounded-md object-cover"
-                alt="pupils"
-              />
-              <p className="mb-8 text-[16px]">
+            <div className="flex h-full flex-col items-center justify-center rounded-md border border-border bg-white p-8 text-center text-blue shadow-md shadow-blue/20">
+              <h2 className="text-[20px] font-semibold">Ecole Maternelle</h2>
+              <p className="my-8 text-[16px]">
                 Nous proposons des options allant de la première à la troisième
                 maternelle.
               </p>
+              <button
+                className="font-sembibold h-[40px] w-[60%] rounded-lg border border-blue font-semibold text-blue"
+                onClick={() => {
+                  setShowSubscribeForm(true);
+                  setMessage(``);
+                }}
+              >
+                S&apos;inscrire
+              </button>
             </div>
           </AnimatedEnter>
           <AnimatedEnter>
-            <div className="flex max-h-[300px] flex-col items-center justify-center rounded-md border border-border bg-white p-4 text-center text-blue shadow-md shadow-blue/20">
-              <h2 className="mb-4 text-[20px] font-semibold">Ecole Primaire</h2>
-              <img
-                src="/assets/images/home/primary.jpg"
-                className="mb-4 h-[150px] w-full rounded-md object-cover"
-                alt="pupils"
-              />
-              <p className="mb-8 text-[16px]">
+            <div className="flex h-full flex-col items-center justify-center rounded-md border border-border bg-white p-8 text-center text-blue shadow-md shadow-blue/20">
+              <h2 className="text-[20px] font-semibold">Ecole Primaire</h2>
+              <p className="my-8 text-[16px]">
                 Nous offrons des options allant de la première à la sixième
                 année primaire.
               </p>
+              <button
+                className="font-sembibold h-[40px] w-[60%] rounded-lg border border-blue font-semibold text-blue"
+                onClick={() => {
+                  setShowSubscribeForm(true);
+                  setMessage(``);
+                }}
+              >
+                S&apos;inscrire
+              </button>
             </div>
           </AnimatedEnter>
           <AnimatedEnter>
-            <div className="mt-0 flex flex-col items-center justify-center gap-4 rounded-md border border-blue/20 bg-blue p-2 text-center text-white shadow-md md:mt-[-60px] ">
-              <div className="p-2">
-                <h2 className="my-8 text-[20px] font-semibold">
-                  Ecole Secondaire
-                </h2>
-                <p className="mb-8 text-[16px]">
-                  Nous proposons également la septième et la huitième année. Et
-                  voici les différentes sections que nous organisons:
-                </p>
-              </div>
-
-              <div className="w-full rounded-md border border-blue/20 bg-white p-4 text-center shadow-md">
-                <h3 className="mb-8 text-[18px] font-semibold text-black">
-                  Nos sections
-                </h3>
-                <div className="grid grid-cols-2 gap-4 text-blue">
-                  <div className="rounded-[10px] border bg-blue/10 p-1 text-[14px] text-blue">
-                    Agronomie
-                  </div>
-                  <div className="rounded-[10px] border bg-blue/10 p-1 text-[14px] text-blue">
-                    Technique social
-                  </div>
-                  <div className="rounded-[10px] border bg-blue/10 p-1 text-[14px] text-blue">
-                    Coupe et couture
-                  </div>
-                </div>
-              </div>
+            <div className="mt-0 flex h-full flex-col items-center justify-center rounded-md border border-blue/20 bg-blue p-8 text-center text-white shadow-md">
+              <h2 className="text-[20px] font-semibold">Ecole Secondaire</h2>
+              <p className="my-8 text-[16px]">
+                Nous offrons les options de CTB, aux humanites nous avons
+                <span className="ml-1 font-semibold underline">
+                  la Coupe et couture,
+                </span>{' '}
+                <span className="font-semibold underline">
+                  l&apos;Agronomie
+                </span>{' '}
+                et{' '}
+                <span className="font-semibold underline">
+                  la techinique sociale
+                </span>
+              </p>
+              <button
+                className="font-sembibold h-[40px] w-[60%] rounded-lg border border-white font-semibold text-white"
+                onClick={() => {
+                  setShowSubscribeForm(true);
+                  setMessage(``);
+                }}
+              >
+                S&apos;inscrire
+              </button>
             </div>
           </AnimatedEnter>
         </div>

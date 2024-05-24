@@ -4,21 +4,40 @@ import { BackgroundBeams } from '@/components/background-beams';
 import { Contact } from '@/components/contact';
 import Dialog from '@/components/dialog';
 import { InfiniteMovingImages } from '@/components/image-slider';
+import { Subscribe } from '@/components/subscribe';
 
 const Hero: React.FC = () => {
-  const [showForm, setShowForm] = React.useState(false);
+  const [showContactForm, setShowContactForm] = React.useState(false);
+  const [showSubscribeForm, setShowSubscribeForm] = React.useState(false);
   const [message, setMessage] = React.useState('');
   return (
     <div id="home" className="flex h-[100vh] flex-col bg-blue md:h-[95vh]">
-      {showForm && (
+      {showContactForm && (
         <Dialog
           onClose={() => {
-            setShowForm(false);
+            setShowContactForm(false);
           }}
           isForm
           width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
         >
-          <Contact message={message} onClose={() => setShowForm(false)} />
+          <Contact
+            message={message}
+            onClose={() => setShowContactForm(false)}
+          />
+        </Dialog>
+      )}
+      {showSubscribeForm && (
+        <Dialog
+          onClose={() => {
+            setShowSubscribeForm(false);
+          }}
+          isForm
+          width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
+        >
+          <Subscribe
+            message={message}
+            onClose={() => setShowSubscribeForm(false)}
+          />
         </Dialog>
       )}
       <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">
@@ -30,23 +49,27 @@ const Hero: React.FC = () => {
           <h2 className="my-[30px] mr-8 text-[18px] text-white/80 md:text-[15px] lg:text-[25px]">
             L&apos;education de vos enfants au centre de notre action.
           </h2>
-          <div className="mt-16 flex flex-col gap-8 md:flex-row">
+          <div className="mt-16 flex flex-row gap-8">
             <button
-              className="font-sembibold h-[45px] w-[30%] rounded-lg bg-white text-blue md:self-end"
+              className="font-sembibold h-[45px] w-[30%] rounded-lg bg-white font-semibold text-blue md:self-end"
               onClick={() => {
-                setShowForm(true);
+                setShowSubscribeForm(true);
+                setMessage(``);
+              }}
+            >
+              S&apos;inscrire
+            </button>
+
+            <button
+              color="white"
+              className="h-[45px] w-[30%] rounded-lg border border-white font-semibold text-white md:block md:self-end"
+              onClick={() => {
+                setShowContactForm(true);
                 setMessage(``);
               }}
             >
               Nous contacter
             </button>
-
-            {/* <Button
-              color="white"
-              className="hidden h-[45px] w-[30%] border border-white font-semibold text-white md:block md:self-end"
-            >
-              Nous contacter
-            </Button> */}
           </div>
         </div>
         <div className="flex h-[40vh] w-full grow flex-row items-center bg-blue md:h-full md:w-[60%]">

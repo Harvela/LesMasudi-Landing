@@ -34,10 +34,7 @@ const Hero: React.FC = () => {
           isForm
           width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
         >
-          <Subscribe
-            message={message}
-            onClose={() => setShowSubscribeForm(false)}
-          />
+          <Subscribe onClose={() => setShowSubscribeForm(false)} />
         </Dialog>
       )}
       <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">

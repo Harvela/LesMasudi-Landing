@@ -21,7 +21,6 @@ const AnimatedEnter: React.FC<{ children: any }> = ({ children }) => {
 
 const About = () => {
   const [showSubscribeForm, setShowSubscribeForm] = React.useState(false);
-  const [message, setMessage] = React.useState('');
   return (
     <div id="about" className="relative z-[200] mt-10">
       {showSubscribeForm && (
@@ -32,10 +31,7 @@ const About = () => {
           isForm
           width="md:w-[50%] sm:w-[95%] overflow-y-scroll max-h-[80%]"
         >
-          <Subscribe
-            message={message}
-            onClose={() => setShowSubscribeForm(false)}
-          />
+          <Subscribe onClose={() => setShowSubscribeForm(false)} />
         </Dialog>
       )}
       <div className="px-8 lg:px-16">
@@ -51,7 +47,6 @@ const About = () => {
                 className="font-sembibold h-[40px] w-[60%] rounded-lg border border-blue font-semibold text-blue"
                 onClick={() => {
                   setShowSubscribeForm(true);
-                  setMessage(``);
                 }}
               >
                 S&apos;inscrire
@@ -69,7 +64,6 @@ const About = () => {
                 className="font-sembibold h-[40px] w-[60%] rounded-lg border border-blue font-semibold text-blue"
                 onClick={() => {
                   setShowSubscribeForm(true);
-                  setMessage(``);
                 }}
               >
                 S&apos;inscrire
@@ -96,7 +90,6 @@ const About = () => {
                 className="font-sembibold h-[40px] w-[60%] rounded-lg border border-white font-semibold text-white"
                 onClick={() => {
                   setShowSubscribeForm(true);
-                  setMessage(``);
                 }}
               >
                 S&apos;inscrire

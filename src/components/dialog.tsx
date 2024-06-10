@@ -19,7 +19,7 @@ const Dialog: React.FC<PropTypes> = ({ children, onClose }) => {
         className={`absolute inset-0 z-30 h-full w-full`}
         onClick={onClose}
       />
-      <div className="z-50 w-[90%] rounded-lg bg-white p-2 md:w-[50%]">
+      <div className="z-50 h-[95%] w-[90%] overflow-y-scroll rounded-lg bg-white p-2 md:w-[50%] md:overflow-hidden">
         {children}
       </div>
     </div>

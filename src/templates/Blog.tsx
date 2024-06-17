@@ -50,9 +50,9 @@ const Blog = () => {
                 className="flex flex-col rounded-md border border-blue/20 bg-white text-black shadow-md md:flex-row"
               >
                 <img
-                  src={article.attributes?.Cover} // Assuming the image URL is under attributes
+                  src={`https://admin.harvely.com${article.attributes?.cover?.data?.attributes?.formats?.small?.url}`} // Assuming the image URL is under attributes
                   alt={article.attributes?.Titre}
-                  className="h-[320px] w-full rounded-l-md object-cover md:w-[600px]"
+                  className="h-[320px] w-full rounded-l-md object-cover md:w-[50%]"
                 />
                 <div className="p-6">
                   <div className="flex flex-col gap-2">
@@ -73,7 +73,7 @@ const Blog = () => {
                     </div>
                   </div>
                   <p className="my-4 text-[12px]">
-                    {truncateText(article.attributes?.Content ?? '', 20)}
+                    {truncateText(article.attributes?.description ?? '', 20)}
                   </p>
                   <Link href={`/blog/${article.id}`}>
                     <button className="rounded-md bg-blue px-2 py-1 text-[10px] text-white">

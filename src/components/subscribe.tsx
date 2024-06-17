@@ -9,38 +9,33 @@ import Select from './select';
 
 const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
   const [data, setData] = useState({} as any);
-  const { register, handleSubmit, reset } = useForm<any>();
+  const [saving, setSaving] = useState(false);
+  const { register, handleSubmit, setValue } = useForm<any>();
   // const [errors, setErrors] = useState<any>({});
 
   const options = [
-    { label: 'Maternelle', value: 'maternelle' },
-    { label: 'Primaire', value: 'primaire' },
-    { label: 'CTB', value: 'ctb' },
-    { label: 'Secondaire', value: 'secondaire' },
+    { label: 'Maternelle', value: 'Maternelle' },
+    { label: 'Primaire', value: 'Primaire' },
+    { label: 'CTB', value: 'CTB' },
+    { label: 'Secondaire', value: 'Secondaire' },
   ];
 
   const getClasses = () => {
     const classes = [];
     let level = [];
-    let adding = false;
     if (data.level === 'primaire') {
       level = ['1', '2', '3', '4', '5', '6'];
     } else if (data.level === 'ctb') {
       level = ['7', '8'];
     } else if (data.level === 'maternelle') {
       level = ['1', '2', '3'];
-      adding = true;
     } else {
       level = ['1', '2', '3', '4'];
-      adding = true;
     }
     for (let i = 0; i < level.length; i++) {
       classes.push({
         label: `${level[i]} ${data.level}`,
-        value: `${
-          adding
-          // ? Number.parseInt(level[i]) + 9 : Number.parseInt(level[i])
-        }`,
+        value: level[i] || '0',
       });
     }
     return classes;
@@ -50,16 +45,23 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
     console.log('Form Data:', formData);
 
     try {
-      await createSubscription(formData);
-
+      if (saving) return;
+      setSaving(true);
+      await createSubscription({
+        ...formData,
+        Classe: Number.parseInt(formData.Classe || '0'),
+      });
       if (event.nativeEvent.submitter.name === 'close') {
         onClose();
       } else if (event.nativeEvent.submitter.name === 'saveAndReset') {
-        reset();
+        // reset();
       }
+      onClose();
     } catch (error) {
       // console.log()
     }
+
+    setSaving(false);
   };
 
   return (
@@ -95,43 +97,55 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
             />
             <Select
               placeholder={'Selectionner'}
-              name={'sex'}
+              name={'Sexe'}
               label="Sexe"
               options={[
-                { label: 'Feminin', value: 'feminin' },
-                { label: 'Masculin', value: 'masculin' },
+                { label: 'Feminin', value: 'Feminin' },
+                { label: 'Masculin', value: 'Masculin' },
               ]}
               register={register}
+              onChange={(e: string) => {
+                console.log(e);
+                setValue('Sexe', e);
+              }}
             />
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Select
               placeholder={'Selectionner'}
-              name={'level'}
+              name={'Niveau'}
               label="Niveau"
               options={options}
-              onChange={(value: any) => setData({ ...data, level: value })}
+              onChange={(e: string) => {
+                console.log(e);
+                setValue('Niveau', e);
+                setData({ ...data, level: e });
+              }}
               register={register}
             />
             <Select
               placeholder={'Selectionner'}
-              name={'class'}
+              name={'Classe'}
               label="Classe"
               options={getClasses()}
               register={register}
+              onChange={(e: string) => {
+                console.log(e);
+                setValue('Classe', Number.parseInt(e));
+              }}
             />
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Input
               placeholder={''}
-              name={'birthplace'}
+              name={'Place_of_Birth'}
               label="Lieu de naissance"
               register={register}
             />
             <Input
               type="date"
               placeholder={''}
-              name={'birthdate'}
+              name={'Date_of_Birth'}
               label="Date de naissance"
               register={register}
             />
@@ -139,7 +153,7 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
           <div className="">
             <Input
               placeholder={''}
-              name={'school'}
+              name={'School_origin'}
               label="Ecole de provenance"
               register={register}
             />
@@ -148,25 +162,26 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
             <Input
               placeholder={''}
               label="Autres precisions"
-              name={'message'}
+              name={'comment'}
               register={register}
             />
           </div>
 
           <div className="flex flex-col-reverse justify-between gap-4 md:flex-row md:gap-8">
             <button
-              type="submit"
+              type="button"
               name="close"
               className="mb-4 w-full rounded-md bg-[#c61a09] px-2 py-1 text-[#fff] md:mb-0 md:w-[50%]"
+              onClick={onClose}
             >
-              Fermer la fenetre
+              Annuler
             </button>
             <button
               type="submit"
               name="saveAndReset"
               className="flex w-full justify-center rounded-md bg-blue px-2 py-1 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 md:w-[50%]"
             >
-              Enregistrer un autre
+              {!saving ? 'Enregistrer' : 'Enregistrement...'}
             </button>
           </div>
         </form>

@@ -1,38 +1,3 @@
-@tailwind base;
-
-@tailwind components;
-
-@tailwind utilities;
-
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
-
-body {
-  font-family:
-    "Poppins" -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-.no-visible-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.no-visible-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
 /*
  * CKEditor 5 (v41.4.2) content styles.
  * Generated on Thu, 13 Jun 2024 06:55:12 GMT.
@@ -485,8 +450,6 @@ margin-left: -15px;
   margin-right: 0;
   font-style: italic;
   border-left: solid 5px hsl(0, 0%, 80%);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 /* @ckeditor/ckeditor5-block-quote/theme/blockquote.css */
 .ck-content[dir="rtl"] blockquote {
@@ -601,43 +564,4 @@ margin-left: -15px;
           background-color: unset;
           color: unset;
   }
-}
-.ck-content h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.ck-content h2 {
-  font-size: 1.875rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.ck-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.ck-content h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.ck-content h5 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 }

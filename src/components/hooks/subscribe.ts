@@ -26,9 +26,7 @@ interface Subscription {
 
 export const createSubscription = async (subscriptionData: Subscription) => {
   const payload = {
-    data: {
-      attributes: subscriptionData,
-    },
+    data: subscriptionData,
   };
 
   const response = await axios.post('/api/inscriptions', payload);
@@ -36,8 +34,27 @@ export const createSubscription = async (subscriptionData: Subscription) => {
 };
 
 export const getArticles = async () => {
-  const response = await axios.get('/api/articles', {
-    params: { token: `Bearer ${window.localStorage.getItem('token')}` },
+  const response = await axios.get(`/api/articles`, {
+    params: {
+      token: `Bearer ${window.localStorage.getItem('token')}`,
+      sort: 'createdAt:asc',
+      'populate[cover][populate]': '*',
+      'pagination[page]': 1,
+      'pagination[pageSize]': 6,
+    },
+  });
+  return response.data;
+};
+
+export const getSingleArticle = async (id: string) => {
+  const response = await axios.get(`/api/articles/${id}`, {
+    params: {
+      token: `Bearer ${window.localStorage.getItem('token')}`,
+      sort: 'createdAt:asc',
+      'populate[cover][populate]': '*',
+      'pagination[page]': 1,
+      'pagination[pageSize]': 6,
+    },
   });
   return response.data;
 };

@@ -1,20 +1,33 @@
 // pages/blog/[id].tsx
 
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
+import { getSingleArticle } from '@/components/hooks/subscribe';
 import { Navbar } from '@/navigation/Navbar';
 import { Footer } from '@/templates/Footer';
-import { blog } from '@/utils/blog';
 
 const BlogDetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const postId = typeof id === 'string' ? parseInt(id, 10) : -1; // Adding radix parameter and handling NaN case
-  const post = blog.find((p) => p.id === postId);
+  const [data, setData] = useState<any>();
 
-  if (!post) {
-    return <div>Post not found</div>;
-  }
+  useEffect(() => {
+    const fetchArticles = async () => {
+      if (id) {
+        try {
+          const result = await getSingleArticle(id as string);
+          setData(result?.data);
+        } catch (error) {
+          console.error('Error fetching articles:', error);
+        }
+      }
+    };
+
+    fetchArticles();
+  }, [id]);
+
+  console.log(data, 'data collected');
 
   return (
     <div className="h-[100vh] md:h-[95vh]">
@@ -24,22 +37,23 @@ const BlogDetailPage = () => {
       <div className="flex flex-col gap-8">
         <div className="bg-blue px-8">
           <h1 className="m-auto mt-24 w-full py-10 text-[32px] font-semibold text-white md:max-w-[1000px]">
-            {post.title}
+            {data?.attributes?.Titre}
           </h1>
         </div>
         <div className="mx-auto my-16 flex w-full flex-col items-center px-8 md:max-w-[1000px]">
           <img
-            src={post.image}
-            alt={post.title}
+            src={`https://admin.harvely.com${data.attributes?.cover?.data?.attributes?.formats?.medium?.url}`}
+            alt={data?.attributes?.Titre}
             className="h-[600px] w-full object-cover md:max-w-[1000px]"
           />
-          <p className="mt-16 text-[16px]">{post.description1}</p>
-          <p className="mt-8 text-[16px]">{post.description2}</p>
-          <p className="my-8 text-[16px]">{post.description3}</p>
-          <div className="m-auto flex flex-col items-center justify-center">
+          <div
+            className="ck-content my-8"
+            dangerouslySetInnerHTML={{ __html: data?.attributes?.Content }}
+          />
+          {/* <div className="m-auto flex flex-col items-center justify-center">
             <h1 className="my-12 text-[32px] font-bold">AUTEURS</h1>
             <div className="flex flex-row flex-wrap items-center justify-between gap-8 md:gap-16">
-              {Object.values(post.team).map((author, authorIndex) => (
+              {Object.values(data?.attributes?.team).map((author, authorIndex) => (
                 <div
                   key={authorIndex}
                   className="flex flex-col items-center justify-center gap-2"
@@ -60,7 +74,7 @@ const BlogDetailPage = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

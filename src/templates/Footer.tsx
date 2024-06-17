@@ -20,10 +20,10 @@ const Footer = () => (
           Email:{' '}
         </h2>
         <a
-          href="mailto:lesmasudi@info.com"
+          href="mailto:administration@lesmasudi.com"
           className="text-[12px] font-medium text-white/80 md:text-lg"
         >
-          lesmasudi@info.com
+          administration@lesmasudi.com
         </a>
       </div>
 

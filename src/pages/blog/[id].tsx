@@ -27,8 +27,6 @@ const BlogDetailPage = () => {
     fetchArticles();
   }, [id]);
 
-  console.log(data, 'data collected');
-
   return (
     <div className="h-[100vh] md:h-[95vh]">
       <div className="bg-blue">
@@ -42,7 +40,7 @@ const BlogDetailPage = () => {
         </div>
         <div className="mx-auto my-16 flex w-full flex-col items-center px-8 md:max-w-[1000px]">
           <img
-            src={`https://admin.harvely.com${data.attributes?.cover?.data?.attributes?.formats?.medium?.url}`}
+            src={`https://admin.harvely.com${data?.attributes?.cover?.data?.attributes?.formats?.medium?.url}`}
             alt={data?.attributes?.Titre}
             className="h-[600px] w-full object-cover md:max-w-[1000px]"
           />

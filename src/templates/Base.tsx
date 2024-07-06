@@ -10,7 +10,7 @@ import { Hero } from './Hero';
 import { Options } from './Options';
 import { Team } from './Team';
 
-const Base = () => {
+const Base = (props: any) => {
   return (
     <div className="text-gray-600 antialiased">
       <Meta title={AppConfig.title} description={AppConfig.description} />
@@ -18,7 +18,7 @@ const Base = () => {
       <Hero />
       <About />
       <Options />
-      <Galery />
+      <Galery photos={props.photos} />
       <Team />
       <Blog />
       <Footer />

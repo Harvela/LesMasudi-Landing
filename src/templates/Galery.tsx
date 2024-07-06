@@ -12,9 +12,12 @@ import Slideshow from 'yet-another-react-lightbox/plugins/slideshow';
 import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
 
-import { galery } from '@/utils/galery';
+interface PhotoPageProps {
+  photos: { src: string; width: number; height: number }[];
+  error?: string | null;
+}
 
-const Galery = () => {
+const Galery = ({ photos }: PhotoPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   return (
     <div id="galery" className="relative z-20 px-8 py-5 lg:px-16">
@@ -34,22 +37,14 @@ const Galery = () => {
           ))}
         </div> */}
         <PhotoAlbum
-          photos={galery.map((g) => ({
-            src: g.icon,
-            height: g.height,
-            width: g.width,
-          }))}
+          photos={photos}
           layout="rows"
           targetRowHeight={150}
           onClick={({ index }) => setSelectedIndex(index)}
         />
 
         <Lightbox
-          slides={galery.map((g) => ({
-            src: g.icon,
-            height: g.height,
-            width: g.width,
-          }))}
+          slides={photos}
           open={selectedIndex >= 0}
           index={selectedIndex}
           close={() => setSelectedIndex(-1)}

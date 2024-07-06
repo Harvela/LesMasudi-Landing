@@ -9,8 +9,8 @@ export default async function handler(
 ) {
   try {
     cloudinary.config({
-      cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-      api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
       api_secret: process.env.CLOUDINARY_API_SECRET, // Replace with your actual API secret
     });
 
@@ -19,6 +19,7 @@ export default async function handler(
       {
         max_results: 20,
         resource_type: 'image',
+
         transformations: [
           {
             width: 1000,

@@ -12,7 +12,7 @@ export const team = [
   {
     name: 'Boaz MUGISHO',
     role: 'Délegué du Promoteur et Conseiller pédagogique',
-    icon: 'https://admin.harvely.com/uploads/Whats_App_Image_2024_04_17_at_09_08_34_cf7490fb58.jpeg',
+    icon: 'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720709175/representant_ebkndj.jpg',
     linkedin: '',
     twitter: '',
     gmail: '',
@@ -22,7 +22,7 @@ export const team = [
   {
     name: 'KAMBALE Sondirya',
     role: 'Superviseur Préfet',
-    icon: 'https://admin.harvely.com/uploads/Whats_App_Image_2024_04_17_at_09_08_34_cf7490fb58.jpeg',
+    icon: 'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720709175/prefet_lerls5.jpg',
     linkedin: '',
     twitter: '',
     gmail: '',

@@ -33,13 +33,7 @@ const Footer = () => (
         </h2>
         <div className="flex flex-row items-center gap-1 md:gap-2">
           <p className="text-[12px] font-medium text-white/80 md:text-lg">
-            0993456789 -
-          </p>
-          <p className="text-[12px] font-medium text-white/80 md:text-lg">
-            0993456789 -
-          </p>
-          <p className="text-[12px] font-medium text-white/80 md:text-lg">
-            0993456789
+            +243 973 849 944
           </p>
         </div>
       </div>

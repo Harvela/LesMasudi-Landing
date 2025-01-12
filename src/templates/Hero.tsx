@@ -78,8 +78,8 @@ const Hero: React.FC = () => {
           <InfiniteMovingImages
             className="z-[50] h-full w-full"
             items={[
-              'https://admin.harvely.com/uploads/Whats_App_Image_2024_04_17_at_09_08_32_0fb12bbdd4.jpeg',
-              'https://admin.harvely.com/uploads/Whats_App_Image_2024_04_17_at_09_08_34_1_53d0aaf3ec.jpeg',
+              'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720262544/Douglas-15_axynyn.jpg',
+              'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720253646/dji_fly_20240702_120922_265_1719914984452_photo_optimized_ehpf2f.jpg',
               '/assets/images/home/pupil4.jpg',
             ]}
           ></InfiniteMovingImages>

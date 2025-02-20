@@ -102,7 +102,7 @@ const About = () => {
         <AnimatedEnter>
           <h1 className="text-[25px] font-bold text-blue">A Propos de nous</h1>
           <div className="flex flex-col-reverse gap-2 pt-10 md:grid md:grid-cols-2 md:gap-10 md:pt-0">
-            <p className=" mt-8 leading-10">
+            <p className=" font-regular mt-8 text-[14px] leading-8">
               Notre école s&apos;engage à créer un environnement où le bonheur
               de chaque enfant est primordial. En repensant l&apos;éducation,
               nous offrons bien plus qu&apos;une excellence académique. Nous
@@ -117,11 +117,24 @@ const About = () => {
               dans son parcours d&apos;apprentissage. Ensemble, nous pouvons
               façonner un avenir où le bonheur et le succès vont de pair.
             </p>
-            <img
-              src="/assets/images/home/bus.jpg"
-              alt="about"
-              className="h-[200px] w-full object-cover md:block md:h-[350px]"
-            />
+            <div className="grid w-full grid-cols-4  gap-2">
+              <img
+                src="/assets/images/home/pupil3.jpg"
+                alt="Student Writing"
+                className="col-span-2 row-span-4 h-full object-cover"
+              />
+
+              <img
+                src="/assets/images/home/maternel.jpg"
+                alt="Students Collaborating"
+                className=" col-span-2 row-span-2 h-[250px] w-full object-cover"
+              />
+              <img
+                src="/assets/images/home/bus.jpg"
+                alt="Teacher in Class"
+                className=" col-span-2 row-span-2 object-cover"
+              />
+            </div>
           </div>
         </AnimatedEnter>
       </div>

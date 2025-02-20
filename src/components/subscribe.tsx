@@ -65,7 +65,7 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center px-2 py-6 md:min-h-full lg:px-2">
+    <div className="flex flex-col justify-center overflow-y-scroll px-2 py-6 md:min-h-full lg:px-2">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Inscription

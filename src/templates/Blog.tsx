@@ -35,6 +35,57 @@ const Blog = () => {
     fetchArticles();
   }, []);
 
+  const ITEMS_PER_PAGE = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
+
+  const getCurrentPageData = () => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return articles.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const renderPagination = () => {
+    const pages: JSX.Element[] = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 1; i <= totalPages; i++) {
+      if (
+        i === 1 ||
+        i === totalPages ||
+        (i >= currentPage - 1 && i <= currentPage + 1)
+      ) {
+        pages.push(
+          <button
+            key={i}
+            className={`mx-1 rounded-sm px-3 py-1 text-sm font-medium ${
+              i === currentPage
+                ? 'bg-gray-900 px-6 text-white'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+            onClick={() => handlePageChange(i)}
+          >
+            {i}
+          </button>,
+        );
+      } else if (
+        (i === currentPage - 2 || i === currentPage + 2) &&
+        i !== 1 &&
+        i !== totalPages
+      ) {
+        pages.push(
+          <span key={i} className="text-md mx-1 px-3 py-1 text-gray-400">
+            ...
+          </span>,
+        );
+      }
+    }
+    return pages;
+  };
+
   return (
     <div id="blog" className="relative z-20 bg-blue px-8 py-10 lg:px-16">
       <div className="rounded-md">
@@ -42,43 +93,34 @@ const Blog = () => {
           BLOG ET DERNIERES INFOS
         </h1>
         <div className="h-[4px] w-[4%] bg-white" />
-        <div className="my-20 grid grid-cols-1 gap-8 text-blue md:grid-cols-2">
-          {articles.length > 0 ? (
-            articles.map((article: any, index: number) => (
+        <div className="my-20 grid grid-cols-1 gap-8 text-blue md:grid-cols-3 lg:grid-cols-4">
+          {getCurrentPageData().length > 0 ? (
+            getCurrentPageData().map((article: any, index: number) => (
               <div
                 key={index}
-                className="flex flex-col rounded-md border border-blue/20 bg-white text-black shadow-md md:flex-row"
+                className="overflow-hidden rounded border bg-white transition-all hover:scale-105 hover:shadow-sm"
               >
                 <img
                   src={`https://admin.harvely.com${article.attributes?.cover?.data?.attributes?.formats?.small?.url}`} // Assuming the image URL is under attributes
                   alt={article.attributes?.Titre}
-                  className="h-[320px] w-full rounded-l-md object-cover md:w-[50%]"
+                  className="h-56 w-full object-cover"
                 />
-                <div className="p-6">
-                  <div className="flex flex-col gap-2">
-                    <h2 className="mb-2 text-[16px] font-bold">
-                      {article.attributes?.Titre}
-                    </h2>
-                    <div className="mb-4 flex flex-row items-center gap-1">
-                      {article.attributes?.team?.map(
-                        (author: any, authorIndex: number) => (
-                          <img
-                            key={authorIndex}
-                            src={author.photo}
-                            alt={author.name}
-                            className="h-10 w-10 rounded-full object-cover"
-                          />
-                        ),
-                      )}
-                    </div>
+                <div className="p-5">
+                  <div className="mb-2 flex items-center justify-between text-[12px] text-[#6a6a6a]">
+                    <span>{article.attributes?.author.name}</span>
+                    {/* <span>{date}</span> */}
                   </div>
-                  <p className="my-4 text-[12px]">
+                  <h3 className="text-md font-semibold text-[#303030]">
+                    {article.attributes?.Titre}
+                  </h3>
+                  <p className="mt-4 text-[13px] font-light leading-[22px] text-[#818181]">
                     {truncateText(article.attributes?.description ?? '', 20)}
                   </p>
-                  <Link href={`/blog/${article.id}`}>
-                    <button className="rounded-md bg-blue px-2 py-1 text-[10px] text-white">
-                      Voir plus
-                    </button>
+                  <Link
+                    href={`/blog/${article.id}`}
+                    className="text-blue-900 hover:text-blue-600 mt-4 inline-block text-sm font-medium hover:underline"
+                  >
+                    Voir plus
                   </Link>
                 </div>
               </div>
@@ -87,6 +129,7 @@ const Blog = () => {
             <p className="text-white">No articles available.</p>
           )}
         </div>
+        <div className="mt-8 flex justify-center">{renderPagination()}</div>
       </div>
     </div>
   );

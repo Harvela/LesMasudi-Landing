@@ -38,54 +38,54 @@ const NavbarGlobal: React.FC<NavbarProps> = ({ setOpenModal }) => {
 
   return (
     <div
-      className={`fixed z-[1000] flex flex-row gap-5 px-8 py-6 md:px-16 ${otherStyle}`}
+      className={`fixed z-[999] flex flex-row gap-3 px-8 py-4 md:px-16 ${otherStyle}`}
     >
       <button onClick={handleMenuToggle}>
-        <MdMenu className="cursor-pointer text-white/90" size={40} />
+        <MdMenu className="cursor-pointer text-white/90" size={30} />
       </button>
 
-      <h1 className="text-[30px] text-white/90">Menu</h1>
+      <h1 className="text-[24px] text-white/90">Menu</h1>
       {isOpen && (
-        <div className="absolute left-0 top-0 z-[1000] flex h-[100vh] w-[400px] flex-row justify-between bg-[#00172B] p-8">
-          <div className="mt-12 flex flex-col gap-8">
+        <div className="absolute left-0 top-0 z-[999] flex h-[100vh] w-[300px] flex-row justify-between bg-[#00172B] p-8">
+          <div className="mt-16 flex flex-col gap-8">
             <Link
               href="/#home"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               Accueil
             </Link>
             <Link
               href="/#about"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               A propos de nous
             </Link>
             <Link
               href="/#service"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               Services
             </Link>
             <Link
               href="/#galery"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               Gallerie
             </Link>
             <Link
               href="/#team"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               Equipe
             </Link>
             <Link
               href="/#blog"
-              className="text-lg font-medium text-white"
+              className="font-regular text-[16px] text-white"
               onClick={handleCloseMenu}
             >
               Blog

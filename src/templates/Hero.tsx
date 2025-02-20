@@ -39,16 +39,16 @@ const Hero: React.FC = () => {
       )}
       <div className=" flex h-full flex-col items-center justify-normal md:flex-row md:justify-between">
         <div className="z-[800] ml-16 mt-40 h-[60vh] w-full md:mt-0 md:h-auto md:w-[40%]">
-          <h1 className="mt-4 text-[32px] font-semibold text-white lg:text-[40px]">
+          <h1 className="mt-4 text-[28px] font-medium text-white lg:text-[40px]">
             Complexe Scolaire
             <br /> Lesmasudi
           </h1>
-          <h2 className="my-[30px] mr-8 text-[18px] text-white/80 md:text-[15px] lg:text-[25px]">
+          <h2 className="font-regular my-[36px] mr-8 text-[18px] text-white/80 md:text-[15px] lg:text-[20px]">
             L&apos;education de vos enfants au centre de notre action.
           </h2>
           <div className="mt-16 flex flex-row gap-8">
             <button
-              className="font-sembibold h-[45px] w-[30%] rounded-lg bg-white font-semibold text-blue md:self-end"
+              className="font-sembibold h-[45px] w-[30%] rounded-md bg-white text-[14px] font-medium text-blue md:self-end"
               onClick={() => {
                 setShowSubscribeForm(true);
                 setMessage(``);
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
 
             <button
               color="white"
-              className="h-[45px] w-[30%] rounded-lg border border-white font-semibold text-white md:block md:self-end"
+              className="h-[45px] w-[30%] rounded-md border-[2px] border-white text-[14px] font-medium text-white md:block md:self-end"
               onClick={() => {
                 setShowContactForm(true);
                 setMessage(``);

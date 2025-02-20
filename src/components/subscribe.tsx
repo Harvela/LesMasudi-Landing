@@ -65,15 +65,15 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center overflow-y-scroll px-2 py-6 md:min-h-full lg:px-2">
+    <div className="flex flex-col justify-center overflow-y-scroll px-2 py-4 md:min-h-full lg:px-2">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Inscription
         </h2>
       </div>
 
-      <div className="mt-10 px-4 sm:mx-auto sm:w-full md:px-8">
-        <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
+      <div className="mt-6 px-4 sm:mx-auto sm:w-full md:px-8">
+        <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Input
               placeholder={''}
@@ -112,25 +112,23 @@ const Subscribe: React.FC<{ onClose: any }> = ({ onClose }) => {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <Select
-              placeholder={'Selectionner'}
-              name={'Niveau'}
+              placeholder="Selectionner"
+              name="Niveau"
               label="Niveau"
               options={options}
               onChange={(e: string) => {
-                console.log(e);
+                setData((prev: any) => ({ ...prev, level: e }));
                 setValue('Niveau', e);
-                setData({ ...data, level: e });
               }}
               register={register}
             />
             <Select
-              placeholder={'Selectionner'}
-              name={'Classe'}
+              placeholder="Selectionner"
+              name="Classe"
               label="Classe"
               options={getClasses()}
               register={register}
               onChange={(e: string) => {
-                console.log(e);
                 setValue('Classe', Number.parseInt(e));
               }}
             />

@@ -4,7 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import dayjs from 'dayjs';
 import type { ReactNode } from 'react';
 import React from 'react';
-import DatePicker from 'react-datepicker';
+import * as DatePicker from 'react-datepicker';
 
 type Props = {
   label?: string;
@@ -72,6 +72,7 @@ const Input: React.FC<Props> = (props: Props) => {
           disabled={disabled}
         ></input>
       ) : (
+        // @ts-ignore
         <DatePicker
           selected={
             selectedDate

@@ -43,17 +43,6 @@ export const team = [
     description:
       'Passionate about Blockchain and Cardano. Worked with several companies and learned a lot. So happy to share my knowlege with my fellow devs. ',
   },
-  {
-    id: 5,
-    name: 'KAMBALE Sondirya',
-    role: 'Superviseur Préfet',
-    icon: 'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720709175/prefet_lerls5.jpg',
-    linkedin: '',
-    twitter: '',
-    gmail: '',
-    description:
-      'Passionate about Blockchain and Cardano. Worked with several companies and learned a lot. So happy to share my knowlege with my fellow devs. ',
-  },
   // {
   //   id: 6,
   //   name: 'RABANI Jimmy',

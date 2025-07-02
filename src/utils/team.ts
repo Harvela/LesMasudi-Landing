@@ -23,7 +23,7 @@ export const team = [
   },
   {
     id: 3,
-    name: 'MASUDI Barwani',
+    name: 'Josué MASUDI BARUANI',
     role: 'Promoteur',
     icon: 'https://res.cloudinary.com/dzj9hndxv/image/upload/v1720262546/Douglas-78_gdulsa.jpg',
     linkedin: '',
